@@ -1,4 +1,4 @@
-describe('blinkyDancer', function() {
+describe('TogapeiBlinkyDancer', function() {
 
   var blinkyDancer, clock;
   var timeBetweenSteps = 100;

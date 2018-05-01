@@ -32,16 +32,19 @@ body, a:link, a:visited, a:active{
   position:absolute;
 }
 
-.blinky {
-  border:10px solid blue; 
-  border-radius:10px;
+.togapei {
+  width: 80px;
+  height: 80px;
+  background-size:100% 100%;
+  background-image: url(images/togapei.png);
   position:absolute; 
 }
 
-.square {
-  border:10px solid yellow;
-  width: 10px;
-  height: 10px;
-  background: yellow;
+.pikachu {
+  width: 120px;
+  height: 100px;
+  background-image: url(images/pikachu.gif);
+  background-size:100% 100%;
   position:absolute; 
 }
+

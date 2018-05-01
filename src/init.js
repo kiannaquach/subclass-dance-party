@@ -23,9 +23,15 @@ $(document).ready(function() {
 
     // make a dancer with a random position
 
+    /* $("body").height = x;
+    x + 5% x * Math.random() - 5% of x
+   
+    1000px
+    /10 = 100px
+    Math.random */ 
     var dancer = new dancerMakerFunction(
-      $("body").height() * Math.random(),
-      $("body").width() * Math.random(),
+      ($("body").height() - $("body").height()/5) * Math.random() + $("body").height()/10,
+      ($("body").width() - $("body").width()/5) * Math.random() + $("body").width()/10,
       Math.random() * 1000
     );
     dancers.push(dancer);
@@ -41,9 +47,21 @@ $(document).ready(function() {
     window.dancers.forEach(function(item) {
       //item.setPosition('50%', $("body").width() * Math.random());
       let currentWidth = interval * intervalCount;
-      item.setPosition('80%', currentWidth);
+      item.setPosition('75%', currentWidth);
       intervalCount++;
     });
   });
+
+
+$(document).on('mouseover', '.togapei', function() {
+  $(this).css('background-image', 'url(images/misty.png)')
+});
+
+$(document).on('mouseleave', '.togapei', function() {
+  $(this).css('background-image', 'url(images/togapei.png)')
+});
+  // $('.pikachu').on('mouseover', function(event) {
+  //   alert('hello!');
+  // });
 });
 
