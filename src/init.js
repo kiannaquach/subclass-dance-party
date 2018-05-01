@@ -19,15 +19,31 @@ $(document).ready(function() {
 
     // get the maker function for the kind of dancer we're supposed to make
     var dancerMakerFunction = window[dancerMakerFunctionName];
+    console.log(dancerMakerFunction);
 
     // make a dancer with a random position
 
-    var dancer = dancerMakerFunction(
+    var dancer = new dancerMakerFunction(
       $("body").height() * Math.random(),
       $("body").width() * Math.random(),
       Math.random() * 1000
     );
+    dancers.push(dancer);
     $('body').append(dancer.$node);
+  });
+
+  $('.lineUp').on('click', function(event) {
+    let totalWidth = $("body").width();
+    let interval = totalWidth / window.dancers.length;
+    let intervalCount = 0;
+    
+  
+    window.dancers.forEach(function(item) {
+      //item.setPosition('50%', $("body").width() * Math.random());
+      let currentWidth = interval * intervalCount;
+      item.setPosition('80%', currentWidth);
+      intervalCount++;
+    });
   });
 });
 

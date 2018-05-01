@@ -15,6 +15,7 @@ Dancer.prototype.step = function() {
   // it just schedules the next step
   // console.log('this node', this);  
   setTimeout(this.step.bind(this), this.timeBetweenSteps);
+
 };
 
 Dancer.prototype.setPosition = function(top, left) {
@@ -28,3 +29,7 @@ Dancer.prototype.setPosition = function(top, left) {
   this.$node.css(styleSettings);
 };
 
+// Dancer.prototype.lineUp = function() {
+//   let horizontalPosition = ;
+//   this.setPosition('10%', '30%');
+// }
