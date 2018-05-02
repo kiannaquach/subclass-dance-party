@@ -3,19 +3,25 @@
   <head>
     <title>Pokemon Let's Dance!</title>
     <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link href="https://fonts.googleapis.com/css?family=Days+One" rel="stylesheet">
     <script src="lib/jquery.js"></script>
     <script src="src/dancer.js"></script>
     <script src="src/TogapeiBlinkyDancer.js"></script>
     <script src="src/PikachuDancer.js"></script>
+    <script src="src/snorlax.js"></script>
   </head>
   <body>
+      <h1 class="logo">
+        <!-- Pokemon Let's Dance -->
+      </h1>
+
     <div class="topbar">
       <audio src="jazz.ogg"></audio>
-      <span class="title">Pokemon Let's Dance!</span>
-      <!-- <a href="#" class="addDancerButton" data-dancer-maker-function-name="Dancer">add a dancer</a>    
-       --><a href="#" class="addDancerButton" data-dancer-maker-function-name="TogapeiBlinkyDancer">add a togapei blinky dancer</a>
-      <a href="#" class="addDancerButton" data-dancer-maker-function-name="PikachuDancer">add a pikachu dancer</a>
-      <a href="#" class="lineUp" data-dancer-maker-function-name="lineUp">lineUp</a>
+      <!-- <span class="title">Pokemon Let's Dance!</span> -->
+      <a href="#" class="addDancerButton" data-dancer-maker-function-name="TogapeiBlinkyDancer">togapei blinky dancer</a>
+      <a href="#" class="addDancerButton" data-dancer-maker-function-name="PikachuDancer">pikachu dancer</a>
+      <a href="#" class="addDancerButton" data-dancer-maker-function-name="SnorlaxDancer">snorlax dancer</a>
+      <a href="#" class="lineUp" data-dancer-maker-function-name="lineUp">lineUp</a> 
     </div>
     <script src="src/init.js"></script>
   </body>

@@ -13,18 +13,25 @@ body{
 }
 body, a:link, a:visited, a:active{
   color: lightblue;
+  text-decoration:none;
+  border:2px solid yellow;
+  border-radius: 20px;
 }
+
 .title, .addDancerButton, .lineUp{
   padding:5px 12px;
-  float:right;
+  float:left;
 }
+
 .topbar{
   height:32px;
   background-color: #555;
+  display:flex;
+  justify-content:space-around;
 }
-.title{
+/*.title{
   background-color: #777;
-}
+}*/
 
 .dancer{
   border:10px solid red;
@@ -48,3 +55,25 @@ body, a:link, a:visited, a:active{
   position:absolute; 
 }
 
+.snorlax {
+  width: 150px;
+  height: 130px;
+  background-image: url(images/snorlax.gif);
+  background-size:100% 100%;
+  position:absolute; 
+}
+
+
+.logo {
+/*  text-align:center;
+  background-color:white;*/
+  background-image: url(images/pokemon_logo.png);
+  background-size:100% 100%;
+  background-position: center;
+  width: 30%;
+  height: 20%;
+  margin:auto;
+  padding:20px;
+  font-family: 'Days One', sans-serif;
+  font-size:50px;
+}

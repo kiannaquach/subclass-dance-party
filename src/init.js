@@ -52,16 +52,78 @@ $(document).ready(function() {
     });
   });
 
+  $(document).on('click', '.pikachu', function(event) {
+    
+    let clickedTop = $(this).css('top');
+    let clickedLeft = $(this).css('left');
+    let shortestDist = 600000; //$("body").height() * $("body").width();
+    let shortestDistKey = 0;
+    let distance = [];
+    
+    if (typeof clickedTop === 'string' && typeof clickedLeft === 'string') {
+      clickedTop = +clickedTop.slice(0, -2);
+      clickedLeft = +clickedLeft.slice(0, -2);
+    }
+    
+    window.dancers.forEach(function(item, idx) {
+      //item.setPosition('50%', $("body").width() * Math.random());
+      let currentTop = item.top;
+      let currentLeft = item.left;
+     
 
-$(document).on('mouseover', '.togapei', function() {
-  $(this).css('background-image', 'url(images/misty.png)')
+      let a = currentTop - clickedTop;
+      let b = currentLeft - clickedLeft;
+      
+      let c = Math.sqrt(a**2 + b**2);
+      distance.push(c);
+     
+            
+    });
+   
+    for (var i = 0; i < distance.length; i++) {
+      if (distance[i] > 3) {
+        if (distance[i] < shortestDist) {
+          shortestDist = distance[i];  
+          shortestDistKey = i;
+          
+        }
+      }
+    }
+
+   
+    $(this).css('transform', 'scale(2)');
+    let closest = dancers[shortestDistKey]; 
+   
+    closest.$node.css('transform', 'scale(4)');
+  });
+  
+  $(document).on('mouseover', '.togapei', function() {
+    $(this).css('background-image', 'url(images/misty.png)')
+  });
+
+  $(document).on('mouseover', '.togapei', function() {
+    $(this).css('background-image', 'url(images/misty.png)')
+  });
+
+  $(document).on('mouseleave', '.togapei', function() {
+    $(this).css('background-image', 'url(images/togapei.png)')
+  });
+    // $('.pikachu').on('mouseover', function(event) {
+    //   alert('hello!');
+    // });
 });
 
-$(document).on('mouseleave', '.togapei', function() {
-  $(this).css('background-image', 'url(images/togapei.png)')
-});
-  // $('.pikachu').on('mouseover', function(event) {
-  //   alert('hello!');
-  // });
-});
+// c = sqrt(a^2+b^2)
 
+//10 x 10 grid
+
+//0,0 is bottom left
+
+//one pika at 2,4
+
+//another pika at 6, 8
+
+// 6-2 = 4 = a
+// 8-4 = 4 = b
+// sqrt of (32)
+// distance between one pika and another pika
