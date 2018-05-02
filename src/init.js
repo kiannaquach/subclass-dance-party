@@ -56,7 +56,7 @@ $(document).ready(function() {
     
     let clickedTop = $(this).css('top');
     let clickedLeft = $(this).css('left');
-    let shortestDist = 600000; //$("body").height() * $("body").width();
+    let shortestDist = 600000;
     let shortestDistKey = 0;
     let distance = [];
     
@@ -91,14 +91,32 @@ $(document).ready(function() {
     }
 
    
-    $(this).css('transform', 'scale(2)');
+    $(this).css('transform','scale(2)');
     let closest = dancers[shortestDistKey]; 
    
-    closest.$node.css('transform', 'scale(4)');
+    closest.$node.css('transform', 'scale(2)');
   });
   
-  $(document).on('mouseover', '.togapei', function() {
-    $(this).css('background-image', 'url(images/misty.png)')
+  $(document).on('click', '.snorlax', function() {
+    for (let i = 0; i < 180; i++) {
+      $(this).css('transform', 'rotate('+i+'deg)').toggle();
+    }
+
+    // $(this).animate({borderSpacing: -90 }, {}, 
+    //   step: function(now,fx){
+    //     $(this).css('transform','rotate(90deg)');  
+    //   },
+    //   duration: 'slow'
+    // }, 'linear');
+
+
+// $('#foo').animate({  borderSpacing: -90 }, {
+//     step: function(now,fx) {
+//       $(this).css('transform','rotate('+now+'deg)');  
+//     },
+//     duration:'slow'
+// },'linear');
+
   });
 
   $(document).on('mouseover', '.togapei', function() {
